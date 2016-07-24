@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>增加景区</title>
+    <link rel="stylesheet" href="/static/css/addScene.css">
+    <script src="/static/js/scene.js"></script>
+
+</head>
+
+<body>
+
+
+<div class="jumbotron container-fluid" >
+    <form class="form-horizontal" id="add" onsubmit="return addSceneInfo()">
+        <div class="form-group col-lg-8">
+            <label class="col-lg-4 control-label addSceneLabel" for="sceneName" >景区名:</label>
+            <div class="col-lg-6">
+                <input  class="form-control" type="text" id="sceneName" name="sceneName" required>
+            </div>
+        </div>
+        <div class="form-group col-lg-8">
+            <label class="col-lg-4 control-label addSceneLabel" for="sceneDescription" >景区描述:</label>
+            <div class="col-lg-6">
+                <input  class="form-control" type="text" id="sceneDescription" name="sceneDescription" required>
+            </div>
+        </div>
+        <div class="form-group col-lg-8">
+            <label class="col-lg-4 control-label addSceneLabel" for="sceneCity" >城市:</label>
+            <div class="col-lg-6">
+                <input  class="form-control" type="text" id="sceneCity" name="sceneCity" required>
+            </div>
+        </div>
+        <div class="form-group col-lg-8">
+            <label class="col-lg-4 control-label addSceneLabel" for="sceneProvince" >省份:</label>
+            <div class="col-lg-6">
+                <input  class="form-control" type="text" id="sceneProvince" name="sceneProvince" required>
+            </div>
+        </div>
+        <div class="form-group col-lg-8">
+            <label class="col-lg-4 control-label addSceneLabel" for="sceneLongitude" >经度:</label>
+            <div class="col-lg-6">
+                <input  class="form-control" type="text" id="sceneLongitude" name="sceneLongitude" required>
+            </div>
+        </div>
+        <div class="form-group col-lg-8">
+            <label class="col-lg-4 control-label addSceneLabel" for="sceneLatitude" >纬度:</label>
+            <div class="col-lg-6">
+                <input  class="form-control" type="text" id="sceneLatitude" name="sceneLatitude" required>
+            </div>
+        </div>
+        <div class="form-group col-lg-8">
+            <label class="col-lg-4 control-label addSceneLabel" for="sceneImage" >景区图片:</label>
+            <div class="col-lg-6">
+                <input  class="control-label" type="file" id="sceneImage" name="sceneImage" required>
+            </div>
+        </div>
+        <div class="form-group col-lg-8">
+            <button class="col-lg-offset-5 col-lg-2 btn btn-primary" type="submit">添加</button>
+            <a class="col-lg-2 btn btn-primary" style="margin-left: 20px" onclick="toAdminCenter()">取消</a>
+        </div>
+    </form>
+</div>
+
+
+</body>
+</html>

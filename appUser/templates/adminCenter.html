@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>管理中心</title>
+
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="/static/jquery/jquery-1.12.3.min.js.js"></script>
+    <script src="/static/jquery/jquery-form-3.46.0.js"></script>
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="/static/css/adminCenter.css">
+
+    <script src="/static/js/adminCenter.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand">管理中心</a>
+            </div>
+
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li id="titleScene" class="active"><a onclick="toAdminCenter()">景区列表</a></li>
+                    <li id="titleApply" class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">审核列表 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a onclick="toApplyGuideLists()">导游申请</a></li>
+                            <li><a onclick="toApplyAdminLists()">管理员申请</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active" style="padding-top: 5px;padding-right: 10px">
+
+                        <img class="img-circle" src="{{ request.session.currentAdmin.avatar }}" style="width: 35px; height: auto;">
+                    </li>
+                    <li style="padding-top: 15px;padding-right: 5px">{{ request.session.currentAdmin.realName }}</li>
+                    <li>
+                        <a role="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span>更多</span>
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a onclick="signOut()">退出登录</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div><!--/.nav-collapse -->
+
+        </div><!--/.container-fluid -->
+    </nav>
+
+    <!-- Main component for a primary marketing message or call to action -->
+    <div id="displayContent">
+
+        <div class="jumbotron container-fluid" >
+            <button class="btn btn-success" type="button" onclick="toAddScene()">增加景区</button>
+            <table class="table table-striped table-hover" >
+                <thead>
+                <th>景区名</th>
+                <th>所在城市</th>
+                <th>操作</th>
+                </thead>
+                <tbody>
+                {% for scene in scenes %}
+                    <tr>
+                        <td class="col-md-4">{{ scene.name }}</td>
+                        <td class="col-md-3">{{ scene.city }}/{{ scene.province }}</td>
+                        <td class="col-md-5">
+                            <button id="queryScene" class="col-lg-2 btn btn-info" type="button" value="{{ scene.id }}" onclick="toQueryScene($(this).val())">查看</button>
+                            {% if scene.status == "online" %}
+                                <button id="onlineScene" class="col-lg-2 btn btn-danger" type="button" value="{{ scene.id }}" disabled="disabled" >已上线</button>
+                                <button id="offlineScene" class="col-lg-2 btn btn-danger" type="button" value="{{ scene.id }}" onclick="updateStatus($(this).val(), 'offline')">下线</button>
+                            {% else %}
+                                <button id="onlineScene" class="col-lg-2 btn btn-danger" type="button" value="{{ scene.id }}" onclick="updateStatus($(this).val(), 'online')">上线</button>
+                                <button id="offlineScene" class="col-lg-2 btn btn-danger" type="button" value="{{ scene.id }}" disabled="disabled" >已下线</button>
+                            {% endif %}
+
+                        </td>
+                    </tr>
+                {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div> <!-- /container -->
+
+</body>
+</html>

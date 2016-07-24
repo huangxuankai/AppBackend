@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>申请导游列表</title>
+    <script src="/static/js/applies.js"></script>
+</head>
+
+<body>
+
+<div class="jumbotron container-fluid" >
+    <table class="table table-striped table-hover" >
+        <thead>
+        <th>导游昵称</th>
+        <th>导游姓名</th>
+        <th>导游电话</th>
+        <th>操作</th>
+        </thead>
+        <tbody>
+        {% for apply in applyGuides %}
+            <tr>
+                <td class="col-md-3">{{ apply.nickname }}</td>
+                <td class="col-md-3">{{ apply.realName }}</td>
+                <td class="col-md-3">{{ apply.phone }}</td>
+                <td class="col-md-3">
+                    <button id="passApplyGuide" class="btn btn-info" type="button" value="{{ apply.id }}" onclick="becomeGuide($(this).val())">同意申请</button>
+                </td>
+            </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

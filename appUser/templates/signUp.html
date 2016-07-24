@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="/static/jquery/jquery-1.12.3.min.js.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Custom styles for this template -->
+    <link href="/static/css/signUp.css" rel="stylesheet">
+
+    <script src="/static/js/home.js"></script>
+</head>
+
+
+<body>
+
+<div class="container">
+    <div class="alert alert-danger" role="alert" id="errorDisplay" style="display: none"></div>
+
+    <form id="signUp" class="form-signUp" onsubmit="return signUpCheck()">
+        <h2 class="form-signUp-heading">管理员注册</h2>
+
+        <label for="account" class="sr-only">账号名:</label>
+        <input type="text" id="account" class="form-control" placeholder="账号" required autofocus>
+
+        <label for="password" class="sr-only">密码:</label>
+        <input type="password" id="password" class="form-control" placeholder="密码" required>
+
+        <label for="confirmPassword" class="sr-only">确认密码:</label>
+        <input type="password" id="confirmPassword" class="form-control" placeholder="确认密码" required>
+
+        <label for="nickname" class="sr-only">昵称:</label>
+        <input type="text" id="nickname" class="form-control" placeholder="昵称" required >
+
+        <label for="realName" class="sr-only">真实姓名:</label>
+        <input type="text" id="realName" class="form-control" placeholder="真实姓名" required>
+
+        <label for="phone" class="sr-only">电话:</label>
+        <input type="text" id="phone" class="form-control" placeholder="电话" required>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">申请</button>
+    </form>
+
+    <div>
+        <h3 class="div-question">已有账号?  <a href="/admin/user/signIn/">登录</a></h3>
+    </div>
+
+</div> <!-- /container -->
+</body>
+
+</html>

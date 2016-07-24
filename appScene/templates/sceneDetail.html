@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>景区详情</title>
+    <link rel="stylesheet" href="/static/css/sceneDetail.css">
+    <script src="/static/js/scene.js"></script>
+</head>
+
+<body>
+
+</body>
+
+<div class="jumbotron container-fluid" >
+    <form class="form-horizontal" id="updateScene" onsubmit="return updateSceneInfo()">
+        <input hidden name="id" value="{{ scene.id }}">
+        <div class="form-group col-lg-8">
+            <label class="col-lg-4 control-label sceneDetailLabel" for="sceneName" >景区名:</label>
+            <div class="col-lg-6">
+                <input  class="form-control" type="text" id="sceneName" name="name" value="{{ scene.name }}">
+            </div>
+        </div>
+        <div class="form-group col-lg-8">
+            <label class="col-lg-4 control-label sceneDetailLabel" for="sceneDescription" >景区描述:</label>
+            <div class="col-lg-6">
+                <input  class="form-control" type="text" id="sceneDescription" name="description" value="{{ scene.description }}">
+            </div>
+        </div>
+        <div class="form-group col-lg-8">
+            <label class="col-lg-4 control-label sceneDetailLabel" for="sceneCity" >城市:</label>
+            <div class="col-lg-6">
+                <input  class="form-control" type="text" id="sceneCity" name="city" value="{{ scene.city }}">
+            </div>
+        </div>
+        <div class="form-group col-lg-8">
+            <label class="col-lg-4 control-label sceneDetailLabel" for="sceneProvince" >省份:</label>
+            <div class="col-lg-6">
+                <input  class="form-control" type="text" id="sceneProvince" name="province" value="{{ scene.province }}">
+            </div>
+        </div>
+        <div class="form-group col-lg-8">
+            <label class="col-lg-4 control-label sceneDetailLabel" for="sceneLongitude" >经度:</label>
+            <div class="col-lg-6">
+                <input  class="form-control" type="text" id="sceneLongitude" name="longitude" value="{{ scene.longitude }}">
+            </div>
+        </div>
+        <div class="form-group col-lg-8">
+            <label class="col-lg-4 control-label sceneDetailLabel" for="sceneLatitude" >纬度:</label>
+            <div class="col-lg-6">
+                <input  class="form-control" type="text" id="sceneLatitude" name="latitude" value="{{ scene.latitude }}">
+            </div>
+        </div>
+        <div class="form-group col-lg-8">
+            <button class="col-lg-offset-5 col-lg-2 btn btn-primary" type="submit" id="update">更新</button>
+            <a class="col-lg-2 btn btn-primary" style="margin-left: 20px" onclick="toAdminCenter()">取消</a>
+        </div>
+    </form>
+</div>
+
+</div>
+</html>

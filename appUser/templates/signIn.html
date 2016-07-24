@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="/static/jquery/jquery-1.12.3.min.js.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Custom styles for this template -->
+    <link href="/static/css/signIn.css" rel="stylesheet">
+
+    <script src="/static/js/home.js" ></script>
+
+</head>
+
+
+<body>
+
+<div class="container">
+    {% if error %}
+        <div class="alert alert-danger" role="alert" id="errorDisplay">{{ error }} </div>
+    {% endif %}
+
+    <div class="alert alert-danger" role="alert" id="errorDisplay1" style="display: none"></div>
+
+    <form id="signIn" class="form-signIn" onsubmit="return signInCheck()">
+        <h2 class="form-signIn-heading">管理员登录</h2>
+        <label for="inputAccount" class="sr-only">账号名:</label>
+        <input type="text" id="inputAccount" class="form-control" placeholder="账号" required autofocus>
+
+        <label for="inputPassword" class="sr-only">密码:</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="密码" required>
+
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" value="remember-me"> 记住我
+            </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
+    </form>
+
+    <div>
+        <h3 class="div-question">未有账号?  <a href="/admin/user/signUp/">注册</a></h3>
+    </div>
+
+</div> <!-- /container -->
+
+</body>
+</html>

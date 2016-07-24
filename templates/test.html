@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Login</title>
+
+
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="/static/jquery/jquery-1.12.3.min.js.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+
+     <!-- Custom styles for this template -->
+    <link href="/static/css/signIn.css" rel="stylesheet">
+
+    <style>
+        strong {
+            color: red;
+        }
+
+        h2 {
+            color: red;
+        }
+
+        .h2 strong {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+<form enctype="multipart/form-data" method="POST" action="http://192.168.0.106:8099/user/imageTest/">
+    <input type="file" name="file" />
+    <br />
+    <input type="submit" value="上传文件" />
+</form>
+
+<div class="container">
+
+    <form class="form-signin">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" value="remember-me"> Remember me
+            </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    </form>
+
+</div> <!-- /container -->
+
+<p>The strongly emphasized word in this paragraph is<strong>red</strong>.</p>
+<h2>This subhead is also red.</h2>
+<h2>The strongly emphasized word in this subhead is<strong>blue</strong>.</h2>
+</body>

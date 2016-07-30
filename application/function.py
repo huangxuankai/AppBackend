@@ -89,11 +89,14 @@ def push_nearly_scene(**kw):
     print channel_id, coordinates
     push_msg = {
         'title': '系统通知',
-        'description': '距离您5000米最近的景区是：' + lists[0]['name'].encode('utf-8'),
         'custom_content': {
             'content': 'value1',
         },
     }
+    if lists:
+        push_msg['description'] = '距离您5000米最近的景区是：' + lists[0]['name'].encode('utf-8')
+    else:
+        push_msg['description'] = '距离您5000米暂无景区'
     opts = {'msg_type':1, 'expires':300}
     c = Channel()
     c.setApiKey('ljYNLqCZdMzY6DsyCyzXEgdss8YmtOFL')

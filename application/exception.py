@@ -2,7 +2,8 @@
 """ By Daath """
 
 prefURL = {
-    # 'ImageURL': 'http://192.168.0.106:8099/static/media/'     # django服务器
+    # 以下地址根据你服务器的ip而定
+    'ImageURL': 'http://192.168.2.107:8099/static/media/'     # django服务器
     # 'ImageURL': 'http://192.168.0.106:8003/static/media/'     # apache2服务器
 }
 

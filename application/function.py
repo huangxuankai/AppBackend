@@ -99,6 +99,7 @@ def push_nearly_scene(**kw):
         push_msg['description'] = '距离您5000米暂无景区'
     opts = {'msg_type':1, 'expires':300}
     c = Channel()
+    # 这里设置云推送的key,务必跟app端的所用云推送key一致
     c.setApiKey('ljYNLqCZdMzY6DsyCyzXEgdss8YmtOFL')
     c.setSecretKey('8sGfm4SSDL1KFuLaPyrdHqNs9Qp9nPkG')
     try:
